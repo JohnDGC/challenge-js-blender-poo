@@ -19,6 +19,7 @@ class Blender {
         console.log("Turned on");
         this.liquefy();
       } else {
+        this.power = false;
         console.log("Insert a valid speed");
         return;
       }
