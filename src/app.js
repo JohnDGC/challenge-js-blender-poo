@@ -38,13 +38,12 @@ class Blender {
       this.power = false;
       this.currentSpeed = 0;
       console.log(`Turned off`);
-    }
+    } else console.log('Still on');
   }
 
   itsPowerOn() {
-    if (this.power) {
-      console.log("Its on");
-    } else console.log("Its off");
+    if (this.power) console.log("Its on")
+    else console.log("Its off");
   }
 }
 
