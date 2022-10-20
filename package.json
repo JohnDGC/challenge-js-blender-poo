@@ -1,0 +1,26 @@
+{
+  "name": "challenge-js-blender-poo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnDGC/challenge-js-blender-poo.git"
+  },
+  "keywords": [
+    "javascript",
+    "poo"
+  ],
+  "author": "JohnDGC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JohnDGC/challenge-js-blender-poo/issues"
+  },
+  "homepage": "https://github.com/JohnDGC/challenge-js-blender-poo#readme",
+  "dependencies": {
+    "scanf": "^1.1.2"
+  }
+}
