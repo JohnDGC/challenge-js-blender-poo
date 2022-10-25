@@ -15,9 +15,6 @@ class Blender {
   }
 
   powerOn() {
-    if (this.power) {
-      return false;
-    }
     this.liquefy();
     return this.power = true;
   }
@@ -35,7 +32,7 @@ class Blender {
   }
 
   checkSpeeds() {
-    if (this.speeds === undefined) {
+    if (!this.speeds) {
       return this.speeds = 0;
     } else return this.speeds;
   }
