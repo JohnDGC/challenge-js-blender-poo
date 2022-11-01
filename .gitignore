@@ -103,5 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
+oldversion.js
 src/oldversion.js
 src/test1.js
+src/apptest.js
+index-2.js

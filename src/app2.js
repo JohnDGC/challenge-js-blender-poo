@@ -14,11 +14,11 @@ class Blender {
   }
 
   powerOn() {
-    this.power = true;
+    this.liquefy();
+    return this.power = true;
   }
-
   powerOff() {
-    this.power = false;
+    return this.power = false;
   }
 
   isPowerOn() {
@@ -26,16 +26,14 @@ class Blender {
   }
 
   liquefy(speed) {
-    if (!this.power)
-      throw "Error: Está apagada";
-
     this.currentSpeed = speed;
-    this.checkSpeeds(speed);
+    return speed;
   }
 
-  checkSpeeds(speed) {
-    if (!this.speeds.find(verify => verify === speed))
-      throw 'Error: velocidad no disponible';
+  checkSpeeds() {
+    if (!this.currentSpeed) {
+      return (this.currentSpeed = 0);
+    } else return this.currentSpeed;
   }
 }
 
