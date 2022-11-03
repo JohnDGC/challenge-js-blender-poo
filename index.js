@@ -21,12 +21,13 @@ try {
   console.clear();
   console.log(`** Marca ${mixer.brand} **`);
 } catch (error) {
-  console.log("mixer " + error);
+  console.log("Mixer " + error);
   return;
 }
 
+let status = mixer.power;
 let option;
-let enter = function () {
+const enter = () => {
   console.log("[Enter]");
   option = scanf("%s");
   console.clear();
@@ -42,20 +43,29 @@ const menu = () =>
   5. Cerrar programa
   ----------------------`
   );
-const output = () =>
+
+const output = () => {
+
+  if (mixer.power === false) status = "Apagada";
+  else status = "Encendida";
+
   console.log(
     `--------------
-  Marca: ${mixer.brand}
-  Estado: ${mixer.power}
-  Velocidades: ${mixer.speeds}
-  Velocidad actual: ${mixer.currentSpeed} 
-  ---------------`
+    Marca: ${mixer.brand}
+    Estado: ${status}
+    Velocidades: ${mixer.speeds}
+    Velocidad actual: ${mixer.currentSpeed} 
+    ---------------`
   );
+}
 
 do {
   menu();
   console.log("Digite una opción: ");
   option = scanf("%d");
+  if (mixer.power === false) status = "Apagada";
+  else status = "Encendida";
+
 
   switch (option) {
     case 1:
@@ -64,6 +74,7 @@ do {
       output();
       enter();
       break;
+
     case 2:
       console.clear();
       console.log(`Digite la velocidad (1-${blenders[index].speeds.length})`);
@@ -75,28 +86,26 @@ do {
       }
       output();
       enter();
-
       break;
+
     case 3:
       console.clear();
       mixer.powerOff();
       output();
       enter();
-
       break;
 
     case 4:
       console.clear();
-      if (mixer.power) console.log("Está encendido");
-      else console.log("Está apagado");
+      if (mixer.power) console.log("Está encendida");
+      else console.log("Está apagada");
       output();
       enter();
-
       break;
 
     default:
       console.clear();
-      console.log("\n", "Ingrese un valor válido", "\n");
+      console.log("\n", "Apagando...", "\n");
       break;
   }
 } while (option !== 5);

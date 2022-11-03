@@ -19,6 +19,7 @@ class Blender {
 
   powerOff() {
     this.power = false;
+    this.currentSpeed = 0;
   }
 
   isPowerOn() {
@@ -29,13 +30,14 @@ class Blender {
     if (!this.power)
       throw "Error: Está apagada";
 
-    this.currentSpeed = speed;
     this.checkSpeeds(speed);
   }
 
   checkSpeeds(speed) {
     if (!this.speeds.find(verify => verify === speed))
-      throw 'Error: velocidad no disponible';
+      throw 'Error: Velocidad no disponible';
+    
+    this.currentSpeed = speed;
   }
 }
 
